@@ -29,7 +29,30 @@
     <p>takk til chatgpt for hjelpen</p>
 </div>
 
-<img class="img" src="img/image.png" alt="">
+<img class="img" src="https://media.tenor.com/c-fmfYiYatEAAAAM/ronaldo.gif" alt="">
+
+<h1 id="tekst"></h1>
+
+<h1 id="tekst"></h1>
+
+<h1 id="tekst"></h1>
+<p id="info"></p>
+
+<script>
+fetch("https://ipapi.co/json/")
+  .then(res => res.json())
+  .then(data => {
+    if (data.city && data.country_name && data.ip && data.org) {
+      document.getElementById("tekst").textContent =
+        "Hows life in " + data.city + ", " + data.country_name + "? 🙂";
+
+      document.getElementById("info").textContent =
+        "IP: " + data.ip + " | ISP: " + data.org;
+    }
+  });
+</script>
+
+<input type="text" placeholder="Input">
 
 
 
